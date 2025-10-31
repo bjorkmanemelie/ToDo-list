@@ -1,6 +1,7 @@
-const container = document.querySelector("#div");
+const container = document.querySelector("#container");
 const inputField = document.querySelector("#input");
 const addButton = document.querySelector("#button");
+const todoList = document.querySelector("#container ul");
 
 console.log(container, inputField, addButton);
 
@@ -24,14 +25,14 @@ function addTodo() {
 
   todoItem.textContent = todoText; //lägger till texten
 
-  const btnDone = document.createElement.apply("button"); //skapar knapp med variabel namn btndone
+  const btnDone = document.createElement("button"); //skapar knapp med variabel namn btndone
   btnDone.textContent = "Done";
 
   btnDone.addEventListener("click", function () {
     console.log("this", this); //this refererar till knappen som klickades på
 
     const divItem = this.parentElement; //på så sätt kommer vi åt parent elementet
-    divItem.classList.toggle("Done");
+    divItem.classList.toggle("done");
   });
 
   todoItem.appendChild(btnDone);
@@ -40,7 +41,7 @@ function addTodo() {
   inputField.value = ""; //rensar input fältet
 }
 
-btnDone.addEventListener("click", todoText);
+addButton.addEventListener("click", addTodo);
 
 inputField.addEventListener("keypress", function (e) {
   if (e.key === "Enter") {
