@@ -43,6 +43,7 @@ function addTodo() {
 
 addButton.addEventListener("click", addTodo);
 
+//nedan är tangentbordsstöd, klicka enter när du skrivit inputen
 inputField.addEventListener("keypress", function (e) {
   if (e.key === "Enter") {
     addTodo();
