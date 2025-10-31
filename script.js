@@ -35,8 +35,16 @@ function addTodo() {
     divItem.classList.toggle("done");
   });
 
+  const removeBtn = document.createElement("button");
+  removeBtn.textContent = "delete";
+
+  removeBtn.addEventListener("click", function () {
+    this.parentElement.remove();
+  });
+
   todoItem.appendChild(btnDone);
   todoList.appendChild(todoItem);
+  todoItem.appendChild(removeBtn);
 
   inputField.value = ""; //rensar input fältet
 }
